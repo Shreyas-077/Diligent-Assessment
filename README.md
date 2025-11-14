@@ -2,6 +2,128 @@
 
 A complete Python-based data pipeline that generates synthetic e-commerce data, loads it into SQLite, and performs analytical queries.
 
+## Prompt
+
+You are an expert full-stack developer. 
+
+
+
+I need a complete, efficient solution for the following task :
+
+Goal : Develop a mini e-commerce data pipeline using Python and SQLite, then push the project to GitHub.
+
+Requirements :
+
+1. Generate synthetic e-commerce data for around 5 tables :
+
+   - users (id, name, email, signup_date)
+
+   - products (id, name, category, price)
+
+   - orders (id, user_id, order_date, total_amount)
+
+   - order_items (id, order_id, product_id, quantity, subtotal)
+
+   - reviews (id, user_id, product_id, rating, review_text, review_date)
+
+   Each table should have realistic random data (use Faker or random library).
+
+2. Save each table’s synthetic data to separate `.csv` files.
+
+3. Ingest all generated CSVs into a SQLite database named `ecommerce.db`.
+
+4. Write a SQL query that joins multiple tables — for example:
+
+   - Show top 5 users by total spending, including user name, email, total orders, and total amount spent.
+
+   - Ensure the query is optimized and readable.
+
+5. The final output should:
+
+   - Print the joined query result clearly in the console.
+
+   - Be modular, with functions like `generate_data()`, `load_to_sqlite()`, and `run_queries()`.
+
+   - Follow clean coding and exception handling practices.
+
+6. Finally, create a short `README.md` explaining:
+
+   - Project structure
+
+   - How to run it
+
+   - Sample query output
+
+7. Assume I’ll push this to GitHub after running it locally. 
+
+So include a `.gitignore` (ignore `__pycache__`, `.db`, `.csv`).
+
+Make sure the code is efficient, uses vectorized operations when possible and runs smoothly in under 30 seconds.
+
+Next Prompt :
+
+Now, let’s build a simple Python-based frontend to display the SQL query results neatly, no need for a fancy web UI.
+
+Here’s what I want next:
+
+1. Goal :
+
+   - Use Python to display the SQL output (top customers by spending) in a clean and interactive way.
+
+   - It should act as a minimal “frontend” or visualization layer.
+
+   - add a button to re-generate the data.
+
+2. Options (pick one) :
+
+   - Streamlit → for a lightweight, browser-based dashboard
+
+   - Tkinter → for a small desktop-style window with a table
+
+   - (Streamlit is preferred for simplicity and quick setup)
+
+3. Requirements :
+
+   - The script should read the data directly from the existing `ecommerce.db` SQLite database.
+
+   - Run the same SQL query that fetches top customers by total spending:
+
+   - Display the result in a clean table format.
+
+   - Include a small title like “E-Commerce Insights Dashboard”.
+
+   - Optionally, add a “Refresh Data” button to re-run the query and update the table.
+
+4. Expected Output :
+
+   - A simple Streamlit/Tkinter window showing a table of:
+
+     - Name
+
+     - Email
+
+     - Total Orders
+
+     - Total Spent
+
+   - Runs directly with one command (e.g. `streamlit run dashboard.py` or `python dashboard.py`)
+
+5. Deliverables :
+
+   - New file: `dashboard.py`
+
+   - Clean, well-commented code
+
+   - No external dependencies except `streamlit` (if used)
+
+   - Ready to integrate with the existing backend files
+
+Now, please generate the complete code for this simple Python frontend (using Streamlit preferred), connecting it to the existing SQLite database and query.
+
+
+
+add the exact wordings in the readme file with the heading as prompt and keep under ecommerce data pipeline heading dont change any words or sentences
+
 ## 📋 Project Overview
 
 This project demonstrates a full data pipeline workflow:
